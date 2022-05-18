@@ -1,4 +1,4 @@
-package co.com.checktask.project.models;
+package co.com.checktask.project.jar.models;
 
 import java.util.Date;
 
@@ -20,8 +20,8 @@ public class TaskModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true, nullable = false)
-	
 	private long id;
+	
 	private String titulo;
 	private String descripcion;
 	private boolean estado;
@@ -33,11 +33,6 @@ public class TaskModel {
 		
 	}
 	
-	@Override
-	public String toString() {
-		return "TaskModel [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", estado=" + estado
-				+ ", importancia=" + importancia + ", fecha=" + fecha + "]";
-	}
 	public long getId() {
 		return id;
 	}
@@ -76,4 +71,9 @@ public class TaskModel {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "TaskModel [id=" + id + ", titulo=" + titulo + ", descripcion=" + descripcion + ", estado=" + estado
+				+ ", importancia=" + importancia + ", fecha=" + fecha + "]";
+	}
 }

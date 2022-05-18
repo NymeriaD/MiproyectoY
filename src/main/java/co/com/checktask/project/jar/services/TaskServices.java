@@ -1,4 +1,4 @@
-package co.com.checktask.project.services;
+package co.com.checktask.project.jar.services;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.com.checktask.project.models.TaskModel;
-import co.com.checktask.project.repositories.TaskRepositories;
+import co.com.checktask.project.jar.models.TaskModel;
+import co.com.checktask.project.jar.repositories.TaskRepositories;
 
 @Service
 public class TaskServices {
@@ -32,8 +32,8 @@ public class TaskServices {
 	}
 	
 	// buscar por prioridad
-	public ArrayList<TaskModel> obtenerPorPrioridad(Integer prioridad){
-		return taskRepositories.findByPrioridad(prioridad);
+	public ArrayList<TaskModel> obtenerPorPrioridad(Integer importancia){
+		return taskRepositories.findByImportancia(importancia);
 	}
 	
 	//eliminar tarea pos id
