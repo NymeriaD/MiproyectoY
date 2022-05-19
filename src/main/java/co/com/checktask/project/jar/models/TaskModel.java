@@ -1,5 +1,6 @@
 package co.com.checktask.project.jar.models;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -26,7 +27,7 @@ public class TaskModel {
 	private String descripcion;
 	private boolean estado;
 	private int importancia;
-	private Date fecha;
+	private LocalDateTime fecha;
 	
 	
 	public TaskModel() {
@@ -63,10 +64,10 @@ public class TaskModel {
 	public void setImportancia(int importancia) {
 		this.importancia = importancia;
 	}
-	public Date getFecha() {
+	public LocalDateTime getFecha() {
 		return fecha;
 	}
-	public void setFecha(Date fecha) {
+	public void setFecha(LocalDateTime fecha) {
 		this.fecha = fecha;
 	}
 	

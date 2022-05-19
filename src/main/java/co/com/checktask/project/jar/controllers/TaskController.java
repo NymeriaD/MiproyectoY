@@ -1,5 +1,6 @@
 package co.com.checktask.project.jar.controllers;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import co.com.checktask.project.jar.models.TaskModel;
 import co.com.checktask.project.jar.services.TaskServices;
 
+// path principal http:localhost:8080/api/v1
 	@RestController
 	@RequestMapping("/task") //direccion del servidor donde se va a activar la clase
 	public class TaskController {
@@ -32,7 +34,8 @@ import co.com.checktask.project.jar.services.TaskServices;
 		
 		@PostMapping("/create")
 		public TaskModel guardarTarea(@RequestBody TaskModel tarea) {
-			System.out.println("Tarea recibida");
+			LocalDateTime fechaActual = LocalDateTime.now();
+			tarea.setFecha(fechaActual);
 			return this.taskService.guardarTarea(tarea);
 		}
 		
